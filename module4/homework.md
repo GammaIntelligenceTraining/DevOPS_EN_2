@@ -106,7 +106,7 @@ The data engineering platform requires a secure ingestion drop-box at `/opt/anal
 
 4. **Scoped Sudoers Delegation:**
    - Create a scoped configuration drop-in file at `/etc/sudoers.d/analysts_maintenance`.
-   - Authorize user `dev_jordan` to run `/usr/bin/systemctl reload nginx` and `/usr/bin/nginx -t` with sudo without entering a password (`NOPASSWD:`).
+   - Authorize user `dev_jordan` to run `/usr/bin/systemctl reload nginx` and `/usr/sbin/nginx -t` with sudo without entering a password (`NOPASSWD:`).
    - Enforce strict permissions on the drop-in file by setting mode `440`.
    - Validate configuration syntax using `sudo visudo -c`.
    - Test permitted commands as `dev_jordan` using `sudo -u dev_jordan sudo -l`.
