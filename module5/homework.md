@@ -101,7 +101,7 @@ Your firewall is active with the rules configured in Task 1. Nginx is installed 
 3. **The "Black-Box" Simulated Outage & Outside-In Diagnostic Triage:**
    - Execute the following staging command on your Linux server to simulate an unexpected production outage without printing internal error details:
      ```bash
-     bash -c 'sudo ufw delete $(sudo ufw status numbered | grep -E "80/tcp.*ALLOW" | head -n1 | cut -d"[" -f2 | cut -d"]" -f1) >/dev/null 2>&1'
+     bash -c 'sudo ufw delete --force $(sudo ufw status numbered | grep -E "80/tcp.*ALLOW" | head -n1 | cut -d"[" -f2 | cut -d"]" -f1) >/dev/null 2>&1'
      ```
    - **Incident Alert:** An automated synthetic monitor reports: *"Critical: Public HTTP endpoint is completely unreachable from external networks!"*
    - Without guessing the failure cause or restarting services prematurely, execute the 5-stage **Outside-In** diagnostic methodology to isolate and remediate the incident:
