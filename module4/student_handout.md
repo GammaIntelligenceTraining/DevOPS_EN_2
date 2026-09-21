@@ -90,7 +90,7 @@ tar -tzvf /tmp/logs_archive.tar.gz
 ### 2.5 Standard Streams & The `sudo tee` Solution
 Every process initializes with three standard file descriptors: `0` (`stdin`), `1` (`stdout`), and `2` (`stderr`).
 
-![Standard Streams & Redirection](../../assets/module1/linux_standard_streams.png)
+![Standard Streams & Redirection](../assets/module1/linux_standard_streams.png)
 
 #### Redirection Mechanics
 - `>` overwrites standard output (FD 1).
@@ -132,7 +132,7 @@ A process transitions through multiple execution states inside the Linux kernel 
 - **`D` (Uninterruptible Sleep):** Blocked waiting for synchronous device I/O (such as disk writes). Cannot be killed by any signal, including `SIGKILL`.
 - **`Z` (Zombie / Defunct):** Terminated via `exit()`, but whose exit status has not yet been collected by its parent process via `waitpid()`. Consumes a process table slot but zero memory.
 
-![Linux Process Lifecycle & Signals](../../assets/module1/linux_process_lifecycle.png)
+![Linux Process Lifecycle & Signals](../assets/module1/linux_process_lifecycle.png)
 
 ### 3.2 Process Inspection Styles: `ps aux` vs `ps -ef` vs `ps -eo`
 Different listing modes provide distinct diagnostic views:
